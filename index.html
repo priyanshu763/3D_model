@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GLB 3D Model Viewer</title>
+  <style>
+    body { margin: 0; }
+    #controls { position: absolute; top: 10px; left: 10px; z-index: 10; background: rgba(255,255,255,0.8); padding: 10px; border-radius: 8px; }
+    #file-input { }
+    #viewer-container { width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <input type="file" id="file-input" accept=".glb,.gltf" />
+    <span id="file-label">No file chosen</span>
+  </div>
+  <div id="viewer-container"></div>
+  <script type="module" src="glb-viewer.js"></script>
+</body>
+</html> 
