@@ -1,4 +1,4 @@
-import * as THREE from 'https://cdn.skypack.dev/three@0.152.2';
+ import * as THREE from 'https://cdn.skypack.dev/three@0.152.2';
 import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.152.2/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.152.2/examples/jsm/controls/OrbitControls.js';
 
@@ -47,12 +47,14 @@ function initThree() {
   container.appendChild(renderer.domElement);
 
   // Lighting
-  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1.2);
+  const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 2.5);
   hemiLight.position.set(0, 20, 0);
   scene.add(hemiLight);
-  const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+  const dirLight = new THREE.DirectionalLight(0xffffff, 2.0);
   dirLight.position.set(5, 10, 7.5);
   scene.add(dirLight);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+  scene.add(ambientLight);
 
   // Grid
   const grid = new THREE.GridHelper(10, 20);
